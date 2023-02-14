@@ -13,11 +13,11 @@ class BinaryTree(object):
         as they are visited in
         a pre-order traversal."""
         if traversal_type == 'preorder':
-            return self.preorder_print(tree.root, "")  # passing empty string initially
+            return self.preorder_print(tree.root, "")[:-1]  # passing empty string initially
         elif traversal_type == 'inorder':
-            return self.inorder_print(tree.root, "")
+            return self.inorder_print(tree.root, "")[:-1]
         elif traversal_type == 'post':
-            return self.post_print(tree.root, "")
+            return self.post_print(tree.root, "")[:-1]
         else:
             print("Traversal type '{}' is not supported.".format(str(traversal_type)))
 
@@ -128,7 +128,7 @@ print tree.search(find_val=6, traversal_type="postorder")
 
 # Test print_tree
 # Should be 1-2-4-5-3
-# print tree.print_tree('preorder')
+print tree.print_tree('preorder')
 # Should be 4-2-5-1-3
 # print tree.print_tree('inorder')
 # Should be 4-5-2-1-3
